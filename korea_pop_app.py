@@ -19,8 +19,9 @@ alt.themes.enable("dark")
 
 #######################
 # 데이터 불러오기
-df = pd.read_csv('201412_202312_korea_population_year.csv', encoding='cp949') # cp949 : 한글 인코딩
-korea_geojson = json.load(open('SIDO_MAP_2022_geoJSON.json')) # json 파일 불러오기
+df = pd.read_csv('201412_202312_korea_population_year_UTF8.csv', encoding='UTF-8') # csv 파일 불러오기
+
+korea_geojson = json.load(open('SIDO_MAP_2022_geoJSON.json', encoding="UTF-8")) # json 파일 불러오기
 
 #######################
 # 데이터 전처리
