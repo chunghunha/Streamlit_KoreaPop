@@ -2,9 +2,9 @@
 # 라이브러리 불러오기
 import streamlit as st
 import pandas as pd
-import geopandas as gpd
 import altair as alt
 import plotly.express as px
+import json
 
 #######################
 # 페이지 설정
@@ -19,8 +19,8 @@ alt.themes.enable("dark")
 
 #######################
 # 데이터 불러오기
-df = pd.read_csv('data/201412_202312_korea_population_year.csv', encoding='cp949') # cp949 : 한글 인코딩
-korea_geojson = gpd.read_file('data/SIDO_MAP_2022_geoJSON.json') # geopandas의 read_file 함수로 데이터 불러오기
+df = pd.read_csv('201412_202312_korea_population_year.csv', encoding='cp949') # cp949 : 한글 인코딩
+korea_geojson = json.load(open('SIDO_MAP_2022_geoJSON.json')) # json 파일 불러오기
 
 #######################
 # 데이터 전처리
